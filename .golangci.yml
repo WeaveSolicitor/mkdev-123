@@ -1,0 +1,49 @@
+version: "2"
+
+run:
+  timeout: 5m
+  go: "1.25"
+  modules-download-mode: readonly
+
+linters:
+  default: none
+  enable:
+    - errcheck
+    - govet
+    - ineffassign
+    - staticcheck
+    - unused
+    - gosec
+    - gocritic
+    - revive
+    - misspell
+    - prealloc
+    - unconvert
+    - unparam
+    - nilnil
+  settings:
+    revive:
+      severity: warning
+      rules:
+        - name: line-length-limit
+          arguments: [140]
+        - name: exported
+    gosec:
+      excludes:
+        - G101
+  exclusions:
+    rules:
+      - path: _test\.go
+        linters:
+          - gosec
+          - errcheck
+          - gocritic
+
+formatters:
+  enable:
+    - gofmt
+    - gofumpt
+
+issues:
+  max-issues-per-linter: 0
+  max-same-issues: 0
