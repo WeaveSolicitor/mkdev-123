@@ -1,0 +1,33 @@
+# binaries
+/bin/
+/mkdev
+/mkdev.exe
+
+# GoReleaser
+dist/
+
+.editorconfig
+.gitattributes
+
+
+docs/
+
+# go
+*.test
+*.out
+coverage.txt
+
+# state
+.mkdev/
+*.pem
+*.key
+
+# IDE
+.idea/
+.vscode/
+.DS_Store
+
+.claude
+.crush
+CLAUDE.md
+.clauge-worktrees/
